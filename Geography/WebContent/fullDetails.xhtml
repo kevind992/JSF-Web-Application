@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core">
+  
+  <h:head>
+    <title>Full City Details</title>
+  </h:head>
+  <h:body>
+  	  <h:messages globalOnly="true" styleClass="error"/>
+	  <h:form>
+		  	<h3>Full City Details</h3>
+		  	<br/>
+			City Code:		 #{cityController.searchArray[0].ctyCode}
+			<br/>
+			City Name:  	 #{cityController.searchArray[0].ctyName}
+			<br/>
+			Country: 		 #{cityController.searchArray[0].ctry}
+			<br/>
+			Region: 		 #{cityController.searchArray[0].rgn}
+			<br/>
+			City Population: #{cityController.searchArray[0].cityPop}
+			<br/>
+			By The Sea: 	 #{cityController.searchArray[0].bTS}
+			<br/>
+			Area: 			 #{cityController.searchArray[0].area}
+			<br/><br/><br/>
+		  	<h:link value="Home" outcome="index"/>   <h:link value="Cities" outcome="cities"/>
+	  	</h:form>	
+  </h:body>
+</html>

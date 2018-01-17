@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<f:metadata>
+	<f:event type="preRenderView" listener="#{productController.loadProducts()}"/>
+</f:metadata>
+<h:head>
+	<title>Products</title>
+    <h:outputStylesheet library="css" name="style.css"  />
+</h:head>
+<h:body>
+	<h:messages styleClass="error"/>
+	<br/>
+	<h:button value="Add Product" outcome="add_product"/>
+	<br/>
+		<h:form>
+			#{productController.products[0].productID}
+			#{productController.products[0].description}
+			<h:commandLink value="View Details"
+						action="#{productController.loadProduct(productController.products[0].productID)}"/>
+			<br/>
+			#{productController.products[1].productID}
+			#{productController.products[1].description}
+			<h:commandLink value="View Details"
+						action="#{productController.loadProduct(productController.products[1].productID)}"/>
+			<br/>
+			#{productController.products[2].productID}
+			#{productController.products[2].description}
+			<h:commandLink value="View Details"
+						action="#{productController.loadProduct(productController.products[2].productID)}"/>
+			<br/>
+			#{productController.products[3].productID}
+			#{productController.products[3].description}
+			<h:commandLink value="View Details"
+						action="#{productController.loadProduct(productController.products[3].productID)}"/>
+		</h:form>
+</h:body>
+</html>

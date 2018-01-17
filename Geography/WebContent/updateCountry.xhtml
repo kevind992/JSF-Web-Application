@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core">
+  <h:head>
+    <title>Update Country</title>
+  </h:head>
+  <h:body>
+	  <h:form>
+	  	<h3>Update Country</h3>
+	  	<br/>
+		Code: <h:inputText  value="#{countryController.countryArrayList[0].ctyCode}" disabled="true"/>
+		<br/><br/>
+		Name: <h:inputText value="#{countryController.countryArrayList[0].ctyName}"/>
+		<br/><br/>
+		Details:<h:inputText value="#{countryController.countryArrayList[0].ctyDetails}"/>
+		<br/><br/>
+		<h:commandButton value="Update" onclick="if(!confirm('You sure you wish to Update?'))return false" 
+		action="#{countryController.updateCountryFROMDB(countryController.countryArrayList[0].ctyCode,countryController.countryArrayList[0].ctyName,countryController.countryArrayList[0].ctyDetails)}">
+		</h:commandButton>
+		<br/><br/><br/>
+	  	<h:link value=" Home " outcome="index"/>
+	  	<h:link value=" Countries " outcome="country"/>
+	  </h:form>	
+  </h:body>
+</html>
